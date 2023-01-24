@@ -1,9 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
-
-
 class Category(models.Model):
     title = models.CharField(max_length=255, db_index=True)
     slug = models.SlugField(max_length=255, db_index=True)
@@ -15,3 +12,9 @@ class Blog(models.Model):
     body = models.TextField()
     posted = models.DateField(db_index=True, auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    enabled = models.BooleanField(default=True)
+
+
+class Comment(models.Model):
+    text = models.TextField()
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
