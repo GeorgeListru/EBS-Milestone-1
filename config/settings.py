@@ -61,7 +61,7 @@ MIDDLEWARE = [
     # Third party middleware
     "corsheaders.middleware.CorsMiddleware",
     # Local middleware
-    "apps.common.middlewares.ApiMiddleware",
+    "......TaskManagement.common.middlewares.ApiMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
